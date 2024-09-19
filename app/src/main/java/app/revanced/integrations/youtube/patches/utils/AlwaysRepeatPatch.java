@@ -1,12 +1,13 @@
 package app.revanced.integrations.youtube.patches.utils;
 
-import android.util.Log;
+import static app.revanced.integrations.youtube.utils.VideoUtils.pauseMedia;
 
+import app.revanced.integrations.shared.utils.Utils;
 import app.revanced.integrations.youtube.settings.Settings;
 import app.revanced.integrations.youtube.shared.VideoInformation;
 
 @SuppressWarnings("unused")
-public class AlwaysRepeatPatch {
+public class AlwaysRepeatPatch extends Utils {
 
     /**
      * Injection point.
@@ -21,17 +22,8 @@ public class AlwaysRepeatPatch {
         final boolean alwaysRepeat = Settings.ALWAYS_REPEAT.get();
         final boolean alwaysRepeatPause = Settings.ALWAYS_REPEAT_PAUSE.get();
 
-        if (alwaysRepeat && alwaysRepeatPause) pauseVideo();
+        if (alwaysRepeat && alwaysRepeatPause) pauseMedia();
         return alwaysRepeat;
-    }
-
-    /**
-     * Pause the current video.
-     * Rest of the implementation added by patch.
-     */
-    private static void pauseVideo() {
-        // These instructions are ignored by patch.
-        Log.d("Extended: AlwaysRepeatPatch", "AlwaysRepeatAndPauseState: " + Settings.ALWAYS_REPEAT_PAUSE.get());
     }
 
 }

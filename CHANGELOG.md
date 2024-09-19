@@ -1,3 +1,242 @@
+# [0.156.0-dev.5](https://github.com/anddea/revanced-integrations/compare/v0.156.0-dev.4...v0.156.0-dev.5) (2024-09-17)
+
+
+### Features
+
+* **YouTube - SponsorBlock:** Make new segment window draggable ([335d929](https://github.com/anddea/revanced-integrations/commit/335d929f8b1f7b39f256b7f4c25a0c98bf5a1a94))
+
+# [0.156.0-dev.4](https://github.com/anddea/revanced-integrations/compare/v0.156.0-dev.3...v0.156.0-dev.4) (2024-09-16)
+
+
+### Bug Fixes
+
+* **YouTube - Hide ads:** Ads are not hidden from feed (A/B tests) ([77daa8a](https://github.com/anddea/revanced-integrations/commit/77daa8ae161851b329012453227244211eeef102))
+* **YouTube - Hide feed components:** `Hide expandable chip under videos` setting does not work ([dc5b34a](https://github.com/anddea/revanced-integrations/commit/dc5b34a81c5590dcaa97ce56e5fbdc79a4d91a2f))
+* **YouTube - Navigation bar components:** Library button is not hidden when `Cairo navigation bar` is applied (A/B tests) ([2017cb3](https://github.com/anddea/revanced-integrations/commit/2017cb3e2badc4d3ac17db0e1ed89e64f08af2e3))
+* **YouTube - Return YouTube Dislike:** Show correct value when swiping back to prior Short and disliking ([6de47b6](https://github.com/anddea/revanced-integrations/commit/6de47b62b54132babb3677845d28511a8a14dbe3))
+* **YouTube - Settings:** `Swap Create and Notifications button` description cuts off ([921032d](https://github.com/anddea/revanced-integrations/commit/921032d159baae24968e09bc83ef08b9185bb86b))
+* **YouTube - Settings:** Some settings are disabled on tablets or tablet layouts ([b7876cb](https://github.com/anddea/revanced-integrations/commit/b7876cbaf2508b8361b1ffde8f6b298eb0691fc5))
+* **YouTube - SponsorBlock:** Add summary text to 'view my segments' button ([b92b86e](https://github.com/anddea/revanced-integrations/commit/b92b86eab3d4e71ad0e4edf2e350a94abf69e89b))
+* **YouTube Music - Disable auto captions:** Captions cannot be changed when `Disable forced auto captions` is turned on ([1cce551](https://github.com/anddea/revanced-integrations/commit/1cce551df188589e1c65ad4f319282e1594e88c0))
+* **YouTube Music - Player components:** Crash at first launch on old clients ([a50bf3f](https://github.com/anddea/revanced-integrations/commit/a50bf3ff1d6377ae5626a7a0ccc54dcb5e852aad))
+* **YouTube Music - SponsorBlock:** SponsorBlock skips entire song when in background ([c126157](https://github.com/anddea/revanced-integrations/commit/c126157a1e2a612d0aba5c2200dbce01c8d1721a))
+
+
+### Features
+
+* **Hide ads:** Remove `Close fullscreen ads` setting ([1ea28f4](https://github.com/anddea/revanced-integrations/commit/1ea28f4df1db9fb9723b0f909b5693d560aa4d4d))
+* **YouTube - Hide feed components:** Add `Hide expandable shelves` setting ([4fef61a](https://github.com/anddea/revanced-integrations/commit/4fef61a1de83977eac9b89e1ceaf25e4ddc8a2cc))
+* **YouTube - Hide feed components:** Remove `Duration filter` setting as it no longer works due to server side changes ([3f0f0da](https://github.com/anddea/revanced-integrations/commit/3f0f0dae38419ccb7aef5eaa1332bf2da8e4939b))
+* **YouTube - Hide feed components:** Selectively hide video by views for Home / Subscription / Search ([13f8a55](https://github.com/anddea/revanced-integrations/commit/13f8a55f42c5844701059c87fda675ef376ec6d1))
+* **YouTube - Video playback:** Add `Disable VP9 codec` setting ([cb38e7b](https://github.com/anddea/revanced-integrations/commit/cb38e7b1b379c969ebad2e0452e07b7de4305b6f))
+* **YouTube Music:** Add support version `6.20.51` ([3db1dc4](https://github.com/anddea/revanced-integrations/commit/3db1dc49efa4ee6c43ab48216689f80d2fa8a02a))
+
+# [0.156.0-dev.3](https://github.com/anddea/revanced-integrations/compare/v0.156.0-dev.2...v0.156.0-dev.3) (2024-09-09)
+
+
+### Bug Fixes
+
+* **YouTube - Settings:** Actually prevent autofocus on the search bar ([b46fd8a](https://github.com/anddea/revanced-integrations/commit/b46fd8a4fb686e59cae30a43bc6f9005c5d48637))
+
+# [0.156.0-dev.2](https://github.com/anddea/revanced-integrations/compare/v0.156.0-dev.1...v0.156.0-dev.2) (2024-09-09)
+
+
+### Bug Fixes
+
+* **YouTube - Settings:** Preferences with the same key in different categories did not appear in search results ([e23c3e3](https://github.com/anddea/revanced-integrations/commit/e23c3e3878ee9292d248574d5f30e6369e879b6d))
+* **YouTube - Settings:** Prevent autofocus on the search bar ([08c3622](https://github.com/anddea/revanced-integrations/commit/08c36220af370f69b38a52926fed541756ce7fc1))
+
+
+### Features
+
+* **YouTube - Overlay buttons:** Add an option to select a different downloader on long press ([4fba913](https://github.com/anddea/revanced-integrations/commit/4fba913de878d3cf725b2379c9f637f846f649a2))
+* **YouTube Music:** Rename `Enable Cairo splash animation` to `Disable Cairo splash animation` ([db330d2](https://github.com/anddea/revanced-integrations/commit/db330d2bd0cb25ecf09b280f476b96cf034f0a9e))
+
+# [0.156.0-dev.1](https://github.com/anddea/revanced-integrations/compare/v0.155.0...v0.156.0-dev.1) (2024-09-06)
+
+
+### Bug Fixes
+
+* **GmsCore support:** Show an error toast if GmsCore is included with root mounted installation ([b5d127d](https://github.com/anddea/revanced-integrations/commit/b5d127d1e38c3d280e86c275e9d8f0c5a1c45b9b))
+* **ReturnYouTubeDislike:** Show estimated like count for videos with hidden likes ([a13d605](https://github.com/anddea/revanced-integrations/commit/a13d605fe67801a43703e2d0003568713198f1f9))
+* **YouTube - Change share sheet:** Patch does not work (A/B tests) ([d340a1f](https://github.com/anddea/revanced-integrations/commit/d340a1fe7cc15f247e7950eafe85f84b4812cd9c))
+* **YouTube - Disable force auto captions:** Patch doesn't work with Shorts ([452a76d](https://github.com/anddea/revanced-integrations/commit/452a76da679879503db0a53fcbe9aa41107c50b7))
+* **YouTube - Video playback:** `Disable playback speed for music` setting sometimes applies to non-music videos as well ([8ef9b4a](https://github.com/anddea/revanced-integrations/commit/8ef9b4af0f7c145900a3dff968db4813843581a2))
+* **YouTube Music - SponsorBlock:** SponsorBlock segments at the end of a song cause the player to get stuck ([fd9eea7](https://github.com/anddea/revanced-integrations/commit/fd9eea717ab4fd1e3c4950af3bf6e02b0a2051a0))
+
+
+### Features
+
+* **YouTube - Hide ads:** Add `Hide promotion alert banner` setting ([7eba6b1](https://github.com/anddea/revanced-integrations/commit/7eba6b162cad7d1bfd638f9d979cfad90e3cbc88))
+* **YouTube - Hide player flyout menu:** Restore `Hide Ambient mode menu` setting ([3e3a43c](https://github.com/anddea/revanced-integrations/commit/3e3a43c6e720992892cf4e81cf8cb0680074497d))
+* **YouTube - Player components:** Add `Disable switch mix playlists` setting ([495e337](https://github.com/anddea/revanced-integrations/commit/495e337ad3fae4adcee254056df9ab4cd769043e))
+* **YouTube - Video playback:** Add `Disable playback speed for music` setting ([6f5cb2e](https://github.com/anddea/revanced-integrations/commit/6f5cb2ec8474a4a7f9c19b7d133c41f53b09c0ca))
+* **YouTube Music - Hide ads:** Add `Hide promotion alert banner` setting ([1f35d81](https://github.com/anddea/revanced-integrations/commit/1f35d811be904835b8cf0b928410fe2015f302ed))
+
+# [0.155.0](https://github.com/anddea/revanced-integrations/compare/v0.154.0...v0.155.0) (2024-09-05)
+
+
+### Bug Fixes
+
+* No longer hiding `Settings` ([f291c2c](https://github.com/anddea/revanced-integrations/commit/f291c2cc41e085713c41a76bcff2b35f57f5665f))
+* **YouTube - Client spoof:** Some side effects of iOS client ([37a814a](https://github.com/anddea/revanced-integrations/commit/37a814aa05f6c20cc479565963b88965fc88e25d))
+* **YouTube - Disable auto captions:** Turning on `Disable forced auto captions` will disable subtitles ([5d31427](https://github.com/anddea/revanced-integrations/commit/5d31427e75e692c2a0b4d7e9121255c4beb5f3b7))
+* **YouTube - Feed components:** `Hide recommended videos` setting does not work in home feed ([ddf22bb](https://github.com/anddea/revanced-integrations/commit/ddf22bb61ce6f38645e7586ea0fa981265ceed81))
+* **YouTube - Hide comments components:** `Hide Comments section in home feed` setting not working in new component name ([69e87d3](https://github.com/anddea/revanced-integrations/commit/69e87d34e3fe8fcf59ef1da269bc555038b9c895))
+* **YouTube - Hide feed components:** `Hide carousel shelf` setting sometimes hides the Watch history in the You tab ([0732b8c](https://github.com/anddea/revanced-integrations/commit/0732b8ceda67cb5ffdcbbc30b17700cf5bcd5dff))
+* **YouTube - Hide feed components:** `Hide expandable chip under videos` setting does not work (A/B tests) ([6cd2c22](https://github.com/anddea/revanced-integrations/commit/6cd2c22970950988fa6fd52d9c321e41e75544b7))
+* **YouTube - Hide feed components:** Sometimes `Hide carousel shelf` setting doesn't work ([c7476ec](https://github.com/anddea/revanced-integrations/commit/c7476ec90cd0aca35c9b9f557128f98258df185c))
+* **YouTube - Hook download actions:** `Override playlist download button` setting does not work in `Download playlist` menu of flyout panel ([a9e7305](https://github.com/anddea/revanced-integrations/commit/a9e7305e9b16951ad9f52155052daf503008eeef))
+* **YouTube - Navigation bar components:** Navigation buttons are not hidden when `Cairo navigation bar` is applied (A/B tests) ([da9bc06](https://github.com/anddea/revanced-integrations/commit/da9bc06b5ebde97ea15673d1574112c3fc65bdb2))
+* **YouTube - Overlay buttons:** `Always repeat` button doesn't work when the video is minimized ([82e84f8](https://github.com/anddea/revanced-integrations/commit/82e84f803f94dfd0637088063fbbf691e28f8d82))
+* **YouTube - Return YouTube Dislike:** Dislikes not appearing due to new component name ([af63631](https://github.com/anddea/revanced-integrations/commit/af63631ef1d13732a9d37f8b06045e07050fc775))
+* **YouTube - Settings:** Update default values for "Hide low views video" and "Spoof streaming data" ([a78233c](https://github.com/anddea/revanced-integrations/commit/a78233c73b999873a5ccd8fceff1b0f01f5aa75c))
+* **YouTube - Shorts components:** `Hide Use this sound button` doesn't work ([e7285fd](https://github.com/anddea/revanced-integrations/commit/e7285fd4e592c60758bd1d6e41224cf2b485ff28))
+* **YouTube - SponsorBlock:** Handle if the user enters an invalid number into any SB settings ([60b0674](https://github.com/anddea/revanced-integrations/commit/60b067443b25ddb3ca984afd85819e7d61c47ae8))
+* **YouTube - SponsorBlock:** Improve create segment manual seek accuracy ([acc52f6](https://github.com/anddea/revanced-integrations/commit/acc52f65104fb7f03f46fb694e3884a985c6024c))
+* **YouTube - SponsorBlock:** The new SponsorBlock segment popup doesn't show minutes in the timestamp ([aec368b](https://github.com/anddea/revanced-integrations/commit/aec368b779549356a825cef82bc8a02713e50541))
+* **YouTube - Spoof client:** Change default values ([f03800d](https://github.com/anddea/revanced-integrations/commit/f03800d80ac1930aecaa1151c2abc46e1a9e9b83))
+* **YouTube - Spoof client:** Fix background playback issue with livestream on iOS clients ([9bd14d2](https://github.com/anddea/revanced-integrations/commit/9bd14d286ebb9a35747d1030140dbb629b3521ba))
+* **YouTube - Spoof client:** Partial fix for watch history issue of brand accounts on iOS clients ([bd1db99](https://github.com/anddea/revanced-integrations/commit/bd1db99934af6ef9eda6b4c069a6a6544e4d5597))
+* **YouTube - Toolbar components:** Turning on the `Hide voice search button` setting makes the margin of the searchbar 0 ([26a4aa9](https://github.com/anddea/revanced-integrations/commit/26a4aa9ba5723ccd6a826585b22c65f14073b807))
+* **YouTube - Video playback:** Update the option to disable toasts when changing the default values ([c2ba880](https://github.com/anddea/revanced-integrations/commit/c2ba88032638d6224cd2b5f733bd8b03879302d9))
+* **YouTube Music - Return YouTube Dislike:** Likes and dislikes are switched in RTL layout ([df8edcc](https://github.com/anddea/revanced-integrations/commit/df8edcc382d5d4871ce9f8768a5974c9f5aa1d4b))
+* **YouTube Music - Sanitize sharing links:** Tracking parameters are not removed from the system share panel ([645e1e4](https://github.com/anddea/revanced-integrations/commit/645e1e4f9481f6fcce06282ebf8e7a9bb2ccf905))
+
+
+### Features
+
+* Merge RVX v1.12.1-dev.1 ([#27](https://github.com/anddea/revanced-integrations/issues/27)) ([b81f0a7](https://github.com/anddea/revanced-integrations/commit/b81f0a7161125fb54d50fa850ec3f91423b03923))
+* Merge v1.13.1-dev.3 ([ea2ce99](https://github.com/anddea/revanced-integrations/commit/ea2ce992053b1ee9eb817d90c2648d960390d04a))
+* **YouTube - Client spoof:** Update hardcoded client version ([51c71c3](https://github.com/anddea/revanced-integrations/commit/51c71c31909dc921bbf8f50cc10e0ffddaa610b7))
+* **YouTube - Default Quality & Speed:** Add an option to disable toasts when changing the default values ([ebce7e9](https://github.com/anddea/revanced-integrations/commit/ebce7e9e0dfbb92e9959e6ae4701eb960ed1b084))
+* **YouTube - Description components:** Add `Hide Contents section` setting ([2065aad](https://github.com/anddea/revanced-integrations/commit/2065aadf62b38b0f2ce47ee506bfc94f9beb6679))
+* **YouTube - Download Playlist Button:** Add playlist download button ([#26](https://github.com/anddea/revanced-integrations/issues/26)) ([52435a6](https://github.com/anddea/revanced-integrations/commit/52435a61b820b1665190e8a393c8f88478c855c1))
+* **YouTube - Hide feed components:** Add syntax to match whole keywords and not substrings ([da31e22](https://github.com/anddea/revanced-integrations/commit/da31e2293bff53973c23241ba73b942e79ab5e2d))
+* **YouTube - Hide player flyout menu:** Add `Hide Sleep timer` setting ([3469de0](https://github.com/anddea/revanced-integrations/commit/3469de08745c82f41472d64eeb9d8882c2e49b50))
+* **YouTube - Hide player flyout menu:** Remove `Hide Ambient mode menu` setting ([1fa19c4](https://github.com/anddea/revanced-integrations/commit/1fa19c4a38994df927ca7f29b79ec33ef5b77a34))
+* **YouTube - Hook download actions:** Add package field in `Hook download actions` patch ([1e567ba](https://github.com/anddea/revanced-integrations/commit/1e567ba523b06aeda340d4486db05b836ab57523))
+* **YouTube - Player components:** Add `Hide zoom overlay` setting ([253c5d2](https://github.com/anddea/revanced-integrations/commit/253c5d29afdaa9db5874f29209955ee48903a267))
+* **YouTube - Settings:** Add category to main menu entries while searching ([120d894](https://github.com/anddea/revanced-integrations/commit/120d894f9486d113bc566781f181703d362ede00))
+* **YouTube - Settings:** Show categories while searching settings ([c8017f1](https://github.com/anddea/revanced-integrations/commit/c8017f185621a6f4701133e3237334cc3b03c95c))
+* **YouTube - Shorts components:** Add `Hide Use this sound button` setting ([2a8cb5a](https://github.com/anddea/revanced-integrations/commit/2a8cb5a1c520c4ff9d98fd44a322fec073ba448a))
+* **YouTube - Shorts components:** Add settings - `Hide floating button`, `Hide Trends button`, `Hide Use template button` ([beb726f](https://github.com/anddea/revanced-integrations/commit/beb726fcb6ce668502f63c1cc918a7236a69213f))
+* **YouTube - Shorts components:** Clarify the description of some settings ([7ee5630](https://github.com/anddea/revanced-integrations/commit/7ee5630e5edfb5dc3908626167c49b2c812a8244))
+* **YouTube - Shorts components:** Move `Change Shorts repeat state` setting to `Experimental Flags` ([6b3bd26](https://github.com/anddea/revanced-integrations/commit/6b3bd265cceabcad3a7da312f298fb42cf3e9d7a))
+* **YouTube - Spoof client:** Allow forcing AVC codec with iOS ([8dfbdd4](https://github.com/anddea/revanced-integrations/commit/8dfbdd47a9427eee689db071c32cab5c8eeaba07))
+* **YouTube - Video playback:** Show AlertDialog when changing `Skip preloaded buffer` setting ([1db72fb](https://github.com/anddea/revanced-integrations/commit/1db72fbba636f011e422ee923b2557c08d988722))
+* **YouTube Music - Hide layout components:** Add `Hide settings menu` setting ([262d068](https://github.com/anddea/revanced-integrations/commit/262d068a0d195d9d73e0217ffc7a71dde76f05fe))
+* **YouTube Music - Player components:** Add settings `Disable miniplayer gesture`, `Disable player gesture` ([a2a6d4d](https://github.com/anddea/revanced-integrations/commit/a2a6d4dd0bdd82fde67188aa67b3f22c89e58ef9))
+* **YouTube Music - Video playback:** Add an option to disable toasts when changing the default values ([9fcead1](https://github.com/anddea/revanced-integrations/commit/9fcead1cce0da53f238df8cbd687973432abb331))
+* **YouTube Music:** Add `Change share sheet` patch ([0104756](https://github.com/anddea/revanced-integrations/commit/0104756a37ed69ef9cf9e9854742ece1290a1fc3))
+* **YouTube:** Add `Change share sheet` patch ([0fdeba2](https://github.com/anddea/revanced-integrations/commit/0fdeba246c9cef183010afd29721a5f0adda14c1))
+* **YouTube:** Add `Spoof streaming data` patch ([b1f53f9](https://github.com/anddea/revanced-integrations/commit/b1f53f941f7864f2cc98b39cb71a94794e43a5ba))
+* **YouTube:** Add `Watch history` patch ([5963ac1](https://github.com/anddea/revanced-integrations/commit/5963ac14cd2350f243d056efcf436589db636c5b))
+* **YouTube:** Remove `Spoof client` patch ([809970a](https://github.com/anddea/revanced-integrations/commit/809970ae90025686c36113d28064b543122be9fe))
+
+# [0.155.0-dev.11](https://github.com/anddea/revanced-integrations/compare/v0.155.0-dev.10...v0.155.0-dev.11) (2024-09-03)
+
+
+### Features
+
+* **YouTube - Settings:** Add category to main menu entries while searching ([120d894](https://github.com/anddea/revanced-integrations/commit/120d894f9486d113bc566781f181703d362ede00))
+
+# [0.155.0-dev.10](https://github.com/anddea/revanced-integrations/compare/v0.155.0-dev.9...v0.155.0-dev.10) (2024-09-03)
+
+
+### Features
+
+* **YouTube - Settings:** Show categories while searching settings ([c8017f1](https://github.com/anddea/revanced-integrations/commit/c8017f185621a6f4701133e3237334cc3b03c95c))
+
+# [0.155.0-dev.9](https://github.com/anddea/revanced-integrations/compare/v0.155.0-dev.8...v0.155.0-dev.9) (2024-09-02)
+
+
+### Bug Fixes
+
+* **YouTube - Settings:** Update default values for "Hide low views video" and "Spoof streaming data" ([a78233c](https://github.com/anddea/revanced-integrations/commit/a78233c73b999873a5ccd8fceff1b0f01f5aa75c))
+
+# [0.155.0-dev.8](https://github.com/anddea/revanced-integrations/compare/v0.155.0-dev.7...v0.155.0-dev.8) (2024-09-01)
+
+
+### Bug Fixes
+
+* **YouTube - Hide feed components:** `Hide expandable chip under videos` setting does not work (A/B tests) ([6cd2c22](https://github.com/anddea/revanced-integrations/commit/6cd2c22970950988fa6fd52d9c321e41e75544b7))
+* **YouTube - Navigation bar components:** Navigation buttons are not hidden when `Cairo navigation bar` is applied (A/B tests) ([da9bc06](https://github.com/anddea/revanced-integrations/commit/da9bc06b5ebde97ea15673d1574112c3fc65bdb2))
+* **YouTube - Shorts components:** `Hide Use this sound button` doesn't work ([e7285fd](https://github.com/anddea/revanced-integrations/commit/e7285fd4e592c60758bd1d6e41224cf2b485ff28))
+* **YouTube - SponsorBlock:** Handle if the user enters an invalid number into any SB settings ([60b0674](https://github.com/anddea/revanced-integrations/commit/60b067443b25ddb3ca984afd85819e7d61c47ae8))
+* **YouTube - Video playback:** Update the option to disable toasts when changing the default values ([c2ba880](https://github.com/anddea/revanced-integrations/commit/c2ba88032638d6224cd2b5f733bd8b03879302d9))
+* **YouTube Music - Return YouTube Dislike:** Likes and dislikes are switched in RTL layout ([df8edcc](https://github.com/anddea/revanced-integrations/commit/df8edcc382d5d4871ce9f8768a5974c9f5aa1d4b))
+
+
+### Features
+
+* Merge v1.13.1-dev.3 ([ea2ce99](https://github.com/anddea/revanced-integrations/commit/ea2ce992053b1ee9eb817d90c2648d960390d04a))
+* **YouTube - Hide feed components:** Add syntax to match whole keywords and not substrings ([da31e22](https://github.com/anddea/revanced-integrations/commit/da31e2293bff53973c23241ba73b942e79ab5e2d))
+* **YouTube - Hide player flyout menu:** Add `Hide Sleep timer` setting ([3469de0](https://github.com/anddea/revanced-integrations/commit/3469de08745c82f41472d64eeb9d8882c2e49b50))
+* **YouTube - Hide player flyout menu:** Remove `Hide Ambient mode menu` setting ([1fa19c4](https://github.com/anddea/revanced-integrations/commit/1fa19c4a38994df927ca7f29b79ec33ef5b77a34))
+* **YouTube - Shorts components:** Add `Hide Use this sound button` setting ([2a8cb5a](https://github.com/anddea/revanced-integrations/commit/2a8cb5a1c520c4ff9d98fd44a322fec073ba448a))
+* **YouTube - Shorts components:** Add settings - `Hide floating button`, `Hide Trends button`, `Hide Use template button` ([beb726f](https://github.com/anddea/revanced-integrations/commit/beb726fcb6ce668502f63c1cc918a7236a69213f))
+* **YouTube - Shorts components:** Clarify the description of some settings ([7ee5630](https://github.com/anddea/revanced-integrations/commit/7ee5630e5edfb5dc3908626167c49b2c812a8244))
+* **YouTube - Spoof client:** Allow forcing AVC codec with iOS ([8dfbdd4](https://github.com/anddea/revanced-integrations/commit/8dfbdd47a9427eee689db071c32cab5c8eeaba07))
+* **YouTube Music - Video playback:** Add an option to disable toasts when changing the default values ([9fcead1](https://github.com/anddea/revanced-integrations/commit/9fcead1cce0da53f238df8cbd687973432abb331))
+* **YouTube:** Add `Spoof streaming data` patch ([b1f53f9](https://github.com/anddea/revanced-integrations/commit/b1f53f941f7864f2cc98b39cb71a94794e43a5ba))
+* **YouTube:** Remove `Spoof client` patch ([809970a](https://github.com/anddea/revanced-integrations/commit/809970ae90025686c36113d28064b543122be9fe))
+
+# [0.155.0-dev.7](https://github.com/anddea/revanced-integrations/compare/v0.155.0-dev.6...v0.155.0-dev.7) (2024-08-16)
+
+
+### Bug Fixes
+
+* **YouTube Music - Sanitize sharing links:** Tracking parameters are not removed from the system share panel ([645e1e4](https://github.com/anddea/revanced-integrations/commit/645e1e4f9481f6fcce06282ebf8e7a9bb2ccf905))
+
+
+### Features
+
+* **YouTube:** Add `Change share sheet` patch ([0fdeba2](https://github.com/anddea/revanced-integrations/commit/0fdeba246c9cef183010afd29721a5f0adda14c1))
+
+# [0.155.0-dev.6](https://github.com/anddea/revanced-integrations/compare/v0.155.0-dev.5...v0.155.0-dev.6) (2024-08-07)
+
+
+### Bug Fixes
+
+* **YouTube - Hook download actions:** `Override playlist download button` setting does not work in `Download playlist` menu of flyout panel ([a9e7305](https://github.com/anddea/revanced-integrations/commit/a9e7305e9b16951ad9f52155052daf503008eeef))
+* **YouTube - Overlay buttons:** `Always repeat` button doesn't work when the video is minimized ([82e84f8](https://github.com/anddea/revanced-integrations/commit/82e84f803f94dfd0637088063fbbf691e28f8d82))
+
+# [0.155.0-dev.5](https://github.com/anddea/revanced-integrations/compare/v0.155.0-dev.4...v0.155.0-dev.5) (2024-08-07)
+
+
+### Bug Fixes
+
+* **YouTube - Hide comments components:** `Hide Comments section in home feed` setting not working in new component name ([69e87d3](https://github.com/anddea/revanced-integrations/commit/69e87d34e3fe8fcf59ef1da269bc555038b9c895))
+* **YouTube - Return YouTube Dislike:** Dislikes not appearing due to new component name ([af63631](https://github.com/anddea/revanced-integrations/commit/af63631ef1d13732a9d37f8b06045e07050fc775))
+* **YouTube - SponsorBlock:** Improve create segment manual seek accuracy ([acc52f6](https://github.com/anddea/revanced-integrations/commit/acc52f65104fb7f03f46fb694e3884a985c6024c))
+* **YouTube - Spoof client:** Change default values ([f03800d](https://github.com/anddea/revanced-integrations/commit/f03800d80ac1930aecaa1151c2abc46e1a9e9b83))
+* **YouTube - Spoof client:** Fix background playback issue with livestream on iOS clients ([9bd14d2](https://github.com/anddea/revanced-integrations/commit/9bd14d286ebb9a35747d1030140dbb629b3521ba))
+* **YouTube - Spoof client:** Partial fix for watch history issue of brand accounts on iOS clients ([bd1db99](https://github.com/anddea/revanced-integrations/commit/bd1db99934af6ef9eda6b4c069a6a6544e4d5597))
+
+
+### Features
+
+* Merge RVX v1.12.1-dev.1 ([#27](https://github.com/anddea/revanced-integrations/issues/27)) ([b81f0a7](https://github.com/anddea/revanced-integrations/commit/b81f0a7161125fb54d50fa850ec3f91423b03923))
+* **YouTube - Client spoof:** Update hardcoded client version ([51c71c3](https://github.com/anddea/revanced-integrations/commit/51c71c31909dc921bbf8f50cc10e0ffddaa610b7))
+* **YouTube - Hook download actions:** Add package field in `Hook download actions` patch ([1e567ba](https://github.com/anddea/revanced-integrations/commit/1e567ba523b06aeda340d4486db05b836ab57523))
+* **YouTube - Shorts components:** Move `Change Shorts repeat state` setting to `Experimental Flags` ([6b3bd26](https://github.com/anddea/revanced-integrations/commit/6b3bd265cceabcad3a7da312f298fb42cf3e9d7a))
+* **YouTube Music:** Add `Change share sheet` patch ([0104756](https://github.com/anddea/revanced-integrations/commit/0104756a37ed69ef9cf9e9854742ece1290a1fc3))
+
+# [0.155.0-dev.4](https://github.com/anddea/revanced-integrations/compare/v0.155.0-dev.3...v0.155.0-dev.4) (2024-08-04)
+
+
+### Features
+
+* **YouTube - Default Quality & Speed:** Add an option to disable toasts when changing the default values ([ebce7e9](https://github.com/anddea/revanced-integrations/commit/ebce7e9e0dfbb92e9959e6ae4701eb960ed1b084))
+
+# [0.155.0-dev.3](https://github.com/anddea/revanced-integrations/compare/v0.155.0-dev.2...v0.155.0-dev.3) (2024-08-04)
+
+
+### Features
+
+* **YouTube - Download Playlist Button:** Add playlist download button ([#26](https://github.com/anddea/revanced-integrations/issues/26)) ([52435a6](https://github.com/anddea/revanced-integrations/commit/52435a61b820b1665190e8a393c8f88478c855c1))
+
 # [0.155.0-dev.2](https://github.com/anddea/revanced-integrations/compare/v0.155.0-dev.1...v0.155.0-dev.2) (2024-07-31)
 
 

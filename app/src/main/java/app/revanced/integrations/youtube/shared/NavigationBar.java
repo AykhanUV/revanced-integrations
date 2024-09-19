@@ -7,6 +7,8 @@ import android.view.View;
 
 import androidx.annotation.Nullable;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 import java.util.WeakHashMap;
 import java.util.concurrent.CountDownLatch;
@@ -16,14 +18,8 @@ import app.revanced.integrations.shared.utils.Logger;
 import app.revanced.integrations.shared.utils.Utils;
 import app.revanced.integrations.youtube.settings.Settings;
 
-/**
- * @noinspection ALL
- */
+@SuppressWarnings("unused")
 public final class NavigationBar {
-
-    //
-    // Navigation bar buttons
-    //
 
     /**
      * How long to wait for the set nav button latch to be released.  Maximum wait time must
@@ -133,11 +129,11 @@ public final class NavigationBar {
         try {
             String lastEnumName = lastYTNavigationEnumName;
 
-            for (NavigationButton button : NavigationButton.values()) {
-                if (button.ytEnumName.equals(lastEnumName)) {
+            for (NavigationButton buttonType : NavigationButton.values()) {
+                if (buttonType.ytEnumNames.contains(lastEnumName)) {
                     Logger.printDebug(() -> "navigationTabLoaded: " + lastEnumName);
-                    viewToButtonMap.put(navigationButtonGroup, button);
-                    navigationTabCreatedCallback(button, navigationButtonGroup);
+                    viewToButtonMap.put(navigationButtonGroup, buttonType);
+                    navigationTabCreatedCallback(buttonType, navigationButtonGroup);
                     return;
                 }
             }
@@ -161,10 +157,10 @@ public final class NavigationBar {
     public static void navigationImageResourceTabLoaded(View view) {
         // 'You' tab has no YT enum name and the enum hook is not called for it.
         // Compare the last enum to figure out which tab this actually is.
-        if (CREATE.ytEnumName.equals(lastYTNavigationEnumName)) {
+        if (CREATE.ytEnumNames.contains(lastYTNavigationEnumName)) {
             navigationTabLoaded(view);
         } else {
-            lastYTNavigationEnumName = NavigationButton.LIBRARY_YOU.ytEnumName;
+            lastYTNavigationEnumName = NavigationButton.LIBRARY.ytEnumNames.get(0);
             navigationTabLoaded(view);
         }
     }
@@ -237,44 +233,39 @@ public final class NavigationBar {
     }
 
     public enum NavigationButton {
-        HOME("PIVOT_HOME"),
-        SHORTS("TAB_SHORTS"),
+        HOME("PIVOT_HOME", "TAB_HOME_CAIRO"),
+        SHORTS("TAB_SHORTS", "TAB_SHORTS_CAIRO"),
         /**
          * Create new video tab.
          * This tab will never be in a selected state, even if the create video UI is on screen.
          */
-        CREATE("CREATION_TAB_LARGE"),
-        SUBSCRIPTIONS("PIVOT_SUBSCRIPTIONS"),
+        CREATE("CREATION_TAB_LARGE", "CREATION_TAB_LARGE_CAIRO"),
+        SUBSCRIPTIONS("PIVOT_SUBSCRIPTIONS", "TAB_SUBSCRIPTIONS_CAIRO"),
         /**
          * Notifications tab.  Only present when
          * {@link Settings#SWITCH_CREATE_WITH_NOTIFICATIONS_BUTTON} is active.
          */
-        NOTIFICATIONS("TAB_ACTIVITY"),
+        NOTIFICATIONS("TAB_ACTIVITY", "TAB_ACTIVITY_CAIRO"),
         /**
-         * Library tab when the user is not logged in.
+         * Library tab, including if the user is in incognito mode or when logged out.
          */
-        LIBRARY_LOGGED_OUT("ACCOUNT_CIRCLE"),
-        /**
-         * User is logged in with incognito mode enabled.
-         */
-        LIBRARY_INCOGNITO("INCOGNITO_CIRCLE"),
-        /**
-         * Old library tab (pre 'You' layout), only present when version spoofing.
-         */
-        LIBRARY_OLD_UI("VIDEO_LIBRARY_WHITE"),
-        /**
-         * 'You' library tab that is sometimes momentarily loaded.
-         * When this is loaded, {@link #LIBRARY_YOU} is also present.
-         * <p>
-         * This might be a temporary tab while the user profile photo is loading,
-         * but its exact purpose is not entirely clear.
-         */
-        LIBRARY_PIVOT_UNKNOWN("PIVOT_LIBRARY"),
-        /**
-         * Modern library tab with 'You' layout.
-         */
-        // The hooked YT code does not use an enum, and a dummy name is used here.
-        LIBRARY_YOU("YOU_LIBRARY_DUMMY_PLACEHOLDER_NAME");
+        LIBRARY(
+                // Modern library tab with 'You' layout.
+                // The hooked YT code does not use an enum, and a dummy name is used here.
+                "YOU_LIBRARY_DUMMY_PLACEHOLDER_NAME",
+                // User is logged out.
+                "ACCOUNT_CIRCLE",
+                "ACCOUNT_CIRCLE_CAIRO",
+                // User is logged in with incognito mode enabled.
+                "INCOGNITO_CIRCLE",
+                "INCOGNITO_CAIRO",
+                // Old library tab (pre 'You' layout), only present when version spoofing.
+                "VIDEO_LIBRARY_WHITE",
+                // 'You' library tab that is sometimes momentarily loaded.
+                // This might be a temporary tab while the user profile photo is loading,
+                // but its exact purpose is not entirely clear.
+                "PIVOT_LIBRARY"
+        );
 
         @Nullable
         private static volatile NavigationButton selectedNavigationButton;
@@ -285,14 +276,14 @@ public final class NavigationBar {
          * or YT abruptly changes the navigation layout for some other reason.
          * <p>
          * All code calling this method should handle a null return value.
-         *
+         * <p>
          * <b>Due to issues with how YT processes physical back button events,
          * this patch uses workarounds that can cause this method to take up to 75ms
          * if the device back button was recently pressed.</b>
          *
          * @return The active navigation tab.
-         * If the user is in the upload video UI, this returns tab that is still visually
-         * selected on screen (whatever tab the user was on before tapping the upload button).
+         *         If the user is in the upload video UI, this returns tab that is still visually
+         *         selected on screen (whatever tab the user was on before tapping the upload button).
          */
         @Nullable
         public static NavigationButton getSelectedNavigationButton() {
@@ -303,16 +294,10 @@ public final class NavigationBar {
         /**
          * YouTube enum name for this tab.
          */
-        private final String ytEnumName;
+        private final List<String> ytEnumNames;
 
-        NavigationButton(String ytEnumName) {
-            this.ytEnumName = ytEnumName;
-        }
-
-        public boolean isLibraryOrYouTab() {
-            return this == LIBRARY_YOU || this == LIBRARY_PIVOT_UNKNOWN
-                    || this == LIBRARY_OLD_UI || this == LIBRARY_INCOGNITO
-                    || this == LIBRARY_LOGGED_OUT;
+        NavigationButton(String... ytEnumNames) {
+            this.ytEnumNames = Arrays.asList(ytEnumNames);
         }
     }
 }

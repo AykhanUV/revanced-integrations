@@ -18,6 +18,14 @@ public final class FeedComponentsFilter extends Filter {
             "horizontalCollectionSwipeProtector=null";
     private static final String CONVERSATION_CONTEXT_SUBSCRIPTIONS_IDENTIFIER =
             "heightConstraint=null";
+    private static final String INLINE_EXPANSION_PATH = "inline_expansion";
+
+    private static final ByteArrayFilterGroup expansion =
+            new ByteArrayFilterGroup(
+                    Settings.HIDE_EXPANDABLE_CHIP,
+                    INLINE_EXPANSION_PATH
+            );
+
     private static final ByteArrayFilterGroup mixPlaylists =
             new ByteArrayFilterGroup(
                     Settings.HIDE_MIX_PLAYLISTS,
@@ -36,6 +44,8 @@ public final class FeedComponentsFilter extends Filter {
     private final StringFilterGroup communityPosts;
     private final StringFilterGroup libraryShelf;
     private final ByteArrayFilterGroup visitStoreButton;
+
+    private final StringFilterGroup videoLockup;
 
     private static final StringTrieSearch communityPostsFeedGroupSearch = new StringTrieSearch();
     private final StringFilterGroupList communityPostsFeedGroup = new StringFilterGroupList();
@@ -70,7 +80,13 @@ public final class FeedComponentsFilter extends Filter {
                 null,
                 "post_base_wrapper",
                 "image_post_root",
+                "images_post_root",
                 "text_post_root"
+        );
+
+        final StringFilterGroup expandableShelf = new StringFilterGroup(
+                Settings.HIDE_EXPANDABLE_SHELF,
+                "expandable_section"
         );
 
         final StringFilterGroup feedSearchBar = new StringFilterGroup(
@@ -83,12 +99,19 @@ public final class FeedComponentsFilter extends Filter {
                 "library_recent_shelf.eml"
         );
 
+        videoLockup = new StringFilterGroup(
+                null,
+                "video_lockup_with_attachment.eml"
+        );
+
         addIdentifierCallbacks(
                 carouselShelf,
                 chipsShelf,
                 communityPosts,
+                expandableShelf,
                 feedSearchBar,
-                libraryShelf
+                libraryShelf,
+                videoLockup
         );
 
         // Paths.
@@ -122,7 +145,8 @@ public final class FeedComponentsFilter extends Filter {
 
         final StringFilterGroup expandableChip = new StringFilterGroup(
                 Settings.HIDE_EXPANDABLE_CHIP,
-                "inline_expansion"
+                INLINE_EXPANSION_PATH,
+                "inline_expander"
         );
 
         final StringFilterGroup feedSurvey = new StringFilterGroup(
@@ -238,7 +262,7 @@ public final class FeedComponentsFilter extends Filter {
         // Check browseId last.
         // Only filter in home feed, search results, playlist.
         final String browseId = RootView.getBrowseId();
-        Logger.printInfo(() -> "browseId: " + browseId);
+        Logger.printDebug(() -> "browseId: " + browseId);
 
         return browseId.startsWith(BROWSE_ID_PLAYLIST);
     }
@@ -276,6 +300,11 @@ public final class FeedComponentsFilter extends Filter {
             if (!communityPostsFeedGroup.check(allValue).isFiltered()) {
                 return false;
             }
+        } else if (matchedGroup == videoLockup) {
+            if (path.startsWith("CellType|") && expansion.check(protobufBufferArray).isFiltered()) {
+                return super.isFiltered(path, identifier, allValue, protobufBufferArray, matchedGroup, contentType, contentIndex);
+            }
+            return false;
         }
 
         return super.isFiltered(path, identifier, allValue, protobufBufferArray, matchedGroup, contentType, contentIndex);
