@@ -126,7 +126,7 @@ public class ReturnYouTubeDislike {
 
         leftSeparatorBounds = new Rect(0, 0,
                 (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 1.2f, dp),
-                (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 18, dp));
+                (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 14, dp));
         final int middleSeparatorSize =
                 (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 3.7f, dp);
         middleSeparatorBounds = new Rect(0, 0, middleSeparatorSize, middleSeparatorSize);
@@ -135,7 +135,7 @@ public class ReturnYouTubeDislike {
 
         leftSeparatorShape = new ShapeDrawable(new RectShape());
         leftSeparatorShape.setBounds(leftSeparatorBounds);
-        locale = resources.getConfiguration().locale;
+        locale = resources.getConfiguration().getLocales().get(0);
 
         ReturnYouTubeDislikeApi.toastOnConnectionError = Settings.RYD_TOAST_ON_CONNECTION_ERROR.get();
     }
@@ -228,15 +228,21 @@ public class ReturnYouTubeDislike {
         // and the like count appears as a device language specific string that says 'Like'.
         // Check if the string contains any numbers.
         if (!Utils.containsNumber(oldLikes)) {
-            // Likes are hidden by video creator
-            //
-            // RYD does not directly provide like data, but can use an estimated likes
-            // using the same scale factor RYD applied to the raw dislikes.
-            //
-            // example video: https://www.youtube.com/watch?v=UnrU5vxCHxw
-            // RYD data: https://returnyoutubedislikeapi.com/votes?videoId=UnrU5vxCHxw
-            Logger.printDebug(() -> "Using estimated likes");
-            oldLikes = formatDislikeCount(voteData.getLikeCount());
+            if (Settings.RYD_ESTIMATED_LIKE.get()) {
+                // Likes are hidden by video creator
+                //
+                // RYD does not directly provide like data, but can use an estimated likes
+                // using the same scale factor RYD applied to the raw dislikes.
+                //
+                // example video: https://www.youtube.com/watch?v=UnrU5vxCHxw
+                // RYD data: https://returnyoutubedislikeapi.com/votes?videoId=UnrU5vxCHxw
+                Logger.printDebug(() -> "Using estimated likes");
+                oldLikes = formatDislikeCount(voteData.getLikeCount());
+            } else {
+                // Change the "Likes" string to show that likes and dislikes are hidden.
+                String hiddenMessageString = str("revanced_ryd_video_likes_hidden_by_video_owner");
+                return newSpanUsingStylingOfAnotherSpan(oldSpannable, hiddenMessageString);
+            }
         }
 
         SpannableStringBuilder builder = new SpannableStringBuilder();

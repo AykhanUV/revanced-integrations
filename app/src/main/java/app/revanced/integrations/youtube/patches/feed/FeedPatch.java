@@ -24,7 +24,7 @@ public class FeedPatch {
 
     public static void hideCategoryBarInRelatedVideos(final View chipView) {
         Utils.hideViewBy0dpUnderCondition(
-                Settings.HIDE_CATEGORY_BAR_IN_RELATED_VIDEOS.get(),
+                Settings.HIDE_CATEGORY_BAR_IN_RELATED_VIDEOS.get() || Settings.HIDE_RELATED_VIDEOS.get(),
                 chipView
         );
     }
@@ -76,6 +76,10 @@ public class FeedPatch {
                 Settings.HIDE_FEED_CAPTIONS_BUTTON,
                 view
         );
+    }
+
+    public static boolean hideFloatingButton() {
+        return Settings.HIDE_FLOATING_BUTTON.get();
     }
 
     public static void hideLatestVideosButton(View view) {
